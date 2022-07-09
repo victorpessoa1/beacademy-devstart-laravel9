@@ -1,7 +1,8 @@
     @extends('template.users')
-    @section('title')
+    @section('title', 'Listagem de Usuários')
     @section('body')
         <h1>Listagem de Usuários</h1>
+        <a href="{{ route('users.create') }}" class="btn btn-warning text-white">Novo Usuário</a>
         <table class="table">
             <thead class="text-center">
                 <tr>
