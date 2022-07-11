@@ -3,6 +3,14 @@
 @section('body')
 
 <h1>Usuário {{$user->name}}</h1>
+@if($errors->any())
+<div class="alert alert-danger" role="alert">
+        @foreach ($errors->all() as $error)
+            {{ $error }} <br>
+        @endforeach
+</div>
+@endif
+
 <form action="{{ route('users.update', $user->id) }}" method="post">
     @method('PUT')
     @csrf
@@ -19,6 +27,7 @@
         <input type="password" class="form-control" id="password" name="password">
       </div>
     <button type="submit" class="btn btn-primary">Atualizar</button>
+    <a href="{{route('users.index')}}" class="btn btn-info text-white">Cancelar</a>
 </form>
 
 @endsection

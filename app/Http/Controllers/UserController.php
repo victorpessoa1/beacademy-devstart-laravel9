@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateUserFormRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class UserController extends Controller
         return view('users.show', compact('user', 'title'));
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateUserFormRequest $request)
     {
         // $user = new User;
         // $user->name = $request->name;
@@ -62,7 +63,7 @@ class UserController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreUpdateUserFormRequest $request, $id)
     {
         if(!$user = $this->model->find($id))
             return redirect()->route('users.index');
