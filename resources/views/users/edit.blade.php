@@ -25,7 +25,12 @@
     <div class="mb-3">
         <label for="password" class="form-label">Senha</label>
         <input type="password" class="form-control" id="password" name="password">
-      </div>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Selecione uma imagem</label>
+        <input type="file" class="form-control form controlmd" id="image" name="image" id="">
+    </div>
+
     <button type="submit" class="btn btn-primary">Atualizar</button>
     <a href="{{route('users.index')}}" class="btn btn-info text-white">Cancelar</a>
 </form>
